@@ -1,19 +1,17 @@
-<html>
-    <head>
-        <center> <title> Caitlin's blog</title> </center>
-    </head>
-    <body>
-      <div>
-          <h1><a href="/">Django Girls Blog</a></h1>
-      </div>
+{% extends 'blog/base.html' %}
 
-      {% for post in posts %}
-          <div>
-              <p>published: {{ post.published_date }}</p>
-              <h1><a href="">{{ post.title }}</a></h1>
-              <p>{{ post.text|linebreaksbr }}</p>
-          </div>
-      {% endfor %}
+
+{% block content %}
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+{% endblock %}
 
 
 <!--
@@ -37,4 +35,4 @@ Thanks for reading my first blog post. Apprecitate the cheerful moments in life 
             <p> What's something you are interested in learning? My answer is sign language. I want to do it but I can be lazy, so I make the excuse that I don't have the time. Bad! Be proactive and take 15 minutes today to learn something new. </p>
         </div> -->
     </body>
-</html> 
+</html>
