@@ -3,10 +3,24 @@
         <center> <title> Caitlin's blog</title> </center>
     </head>
     <body>
-        <div>
+      <div>
+          <h1><a href="/">Django Girls Blog</a></h1>
+      </div>
+
+      {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+      {% endfor %}
+
+
+<!--
+       <div>
             <h1><a href=""> Django Girls Blog</a></h1>
         </div>
-
+          {{ posts }}
         <div>
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My first post</a></h2>
@@ -21,6 +35,6 @@ Thanks for reading my first blog post. Apprecitate the cheerful moments in life 
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My second post</a></h2>
             <p> What's something you are interested in learning? My answer is sign language. I want to do it but I can be lazy, so I make the excuse that I don't have the time. Bad! Be proactive and take 15 minutes today to learn something new. </p>
-        </div>
+        </div> -->
     </body>
-</html>
+</html> 
